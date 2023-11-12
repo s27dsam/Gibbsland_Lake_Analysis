@@ -67,10 +67,10 @@ water_quality_trends = water_quality_comparison_data1.groupby(['site_name_short'
 #Streamlit app
 def main():
     pass
-    # fig = plot_dissolved_oxygen_trends(water_quality_trends)
-    # st.pyplot(fig)
-    # fig1 = plot_salinity_trends(water_quality_trends)
-    # st.pyplot(fig1)
+    fig = plot_dissolved_oxygen_trends(water_quality_trends)
+    st.pyplot(fig)
+    fig1 = plot_salinity_trends(water_quality_trends)
+    st.pyplot(fig1)
 
 
 
