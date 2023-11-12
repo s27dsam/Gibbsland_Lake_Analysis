@@ -1,10 +1,6 @@
 import streamlit as st
 import pandas as pd
-import matplotlib.pyplot as plt
-import numpy as np
-from scipy.stats import linregress
-import seaborn as sns  # For a nice palette of colors
-from plots import plot_dissolved_oxygen_trends
+from plots import plot_dissolved_oxygen_trends, plot_salinity_trends
 
 st.set_page_config(page_title="Gibbsland Lakes Analysis", page_icon="🧮", layout="wide")
 hide_st_style = """
@@ -62,22 +58,19 @@ water_quality_data = renamed_data[['sal', 'do_mg', 'date', 'site_name_short']]
 # Drop rows where 'sal' or 'do_mg' are missing
 water_quality_comparison_data = water_quality_data.dropna(subset=['sal', 'do_mg'])
 
-water_quality_comparison_data1 = water_quality_comparison_data[water_quality_comparison_data['site_name_short'] != 'Lake_Reeve_East']
+water_quality_comparison_data1 = water_quality_comparison_data[water_quality_comparison_data['site_name_short'] != 'Lake Reeve\xa0East']
 # drop Lake_Reeve_East as its only has data from the last few years
 
 water_quality_trends = water_quality_comparison_data1.groupby(['site_name_short', 'date']).mean().reset_index()
 
 
-
-# Streamlit app
+#Streamlit app
 def main():
     pass
-    # Load or prepare your data here
-    # water_quality_trends = ...
-
-    # Plotting
     # fig = plot_dissolved_oxygen_trends(water_quality_trends)
     # st.pyplot(fig)
+    # fig1 = plot_salinity_trends(water_quality_trends)
+    # st.pyplot(fig1)
 
 
 
