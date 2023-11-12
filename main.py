@@ -14,8 +14,17 @@ hide_st_style = """
 st.markdown(hide_st_style, unsafe_allow_html=True)
 st.title('Gibbsland Lakes Analysis')
 
-st.write('Percentage of the Salinity in Gippsland Lakes Over the last 30 years')
-col1, col2, col3, col4, col5 = st.columns(5)
+tab1, tab2, tab3 = st.tabs(["Metrics", 'Plots','References'])
+
+tab3.subheader('EPA Gippsland Lakes Water Quality Data 1990 - 2023')
+tab3.write('Water quality data collected from EPA Victoria Marine Fixed Site Network within the Gippsland Lakes. Contains '
+           'water sample data on a range of nutrients and physical parameters, pertaining to water quality. Data collected monthly, '
+           'where possible, at known fixed locations (sites) in surface water')
+tab3.write('https://discover.data.vic.gov.au/dataset/gippsland-lakes-water-quality-data-1990-2023')
+
+
+tab1.write('Percentage of the Salinity in Gippsland Lakes Over the last 30 years')
+col1, col2, col3, col4, col5 = tab1.columns(5)
 col1.metric("Lake King North", "26.76", "11.27%")
 col2.metric("Lake King North", "27.63", "4.23%")
 col3.metric("Lake Victoria", "20.72", "16.20%")
@@ -23,8 +32,8 @@ col4.metric("Lake Wellington", "7.56", "21.95%")
 col5.metric("Shaving Point", "27.87", "5.02%")
 
 
-st.write('Percentage of Dissolved Oxygen in Gippsland Lakes Over the last 30 years')
-col1, col2, col3, col4, col5 = st.columns(5)
+tab1.write('Percentage of Dissolved Oxygen in Gippsland Lakes Over the last 30 years')
+col1, col2, col3, col4, col5 = tab1.columns(5)
 col1.metric("Lake King North", "9.64", "27.24%")
 col2.metric("Lake King North", "9.07", "4.01%")
 col3.metric("Lake Victoria", "11.38", "-1.78%")
@@ -68,9 +77,9 @@ water_quality_trends = water_quality_comparison_data1.groupby(['site_name_short'
 def main():
     pass
     fig = plot_dissolved_oxygen_trends(water_quality_trends)
-    st.pyplot(fig)
+    tab2.pyplot(fig)
     fig1 = plot_salinity_trends(water_quality_trends)
-    st.pyplot(fig1)
+    tab2.pyplot(fig1)
 
 
 
