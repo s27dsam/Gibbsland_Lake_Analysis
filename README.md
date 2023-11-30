@@ -1,4 +1,4 @@
-# Historical Analysis of the Gibbsland Lakes
+# Quick Historical Analysis of the Salinity and Dissolved oxygen levels of the Gibbsland Lakes
 
 Welcome to the Historical Analysis of the Gibbsland Lakes project. This project aims to provide an in-depth analysis of various lakes in the Gibbsland region using advanced data science techniques. By applying Linear Regression models, we dive into the past 30 years of data to understand and predict future trends in lake salinity and dissolved oxygen levels.
 
