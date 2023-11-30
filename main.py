@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 from plots import plot_dissolved_oxygen_trends, plot_salinity_trends
 
+
 st.set_page_config(page_title="Gibbsland Lakes Analysis", page_icon="🧮", layout="wide")
 hide_st_style = """
             <style>
@@ -40,9 +41,24 @@ col3.metric("Lake Victoria", "11.38", "-1.78%")
 col4.metric("Lake Wellington", "7.56", "-5.93%")
 col5.metric("Shaving Point", "8.99", "14.14%")
 
+tab1.write("The changes in salinity and dissolved oxygen levels in the Gippsland Lakes over the "
+           "last 30 years are quite intriguing. For salinity, Lake King North has seen an increase "
+           "of 11.27%, whereas Lake Victoria has experienced a substantial rise of 16.20%. "
+           "Lake Wellington and Shaving Point have also witnessed significant changes with "
+           "21.95% and 5.02% increases, respectively. These shifts suggest a notable alteration "
+           "in the salt concentration in these water bodies.On the other hand, the dissolved "
+           "oxygen levels paint a different picture. Lake King North has experienced a considerable "
+           "rise of 27.24%, while Shaving Point follows closely with a 14.14% increase. However, "
+           "Lake Victoria has seen a slight decrease of -1.78%, and Lake Wellington has a more "
+           "significant decrease of -5.93%. These trends could have significant implications for "
+           "the ecosystems in these lakes. The increase in salinity might impact the types of "
+           "organisms that can thrive, while changes in dissolved oxygen levels could affect "
+           "the overall health of aquatic life.")
+
+
 
 # Load the dataset
-file_path = '/Users/sam/PycharmProjects/gibbslands_web_app/1990_01-2023_06_Gippsland_Lakes_Water_quality_data.xlsx'
+file_path = '1990_01-2023_06_Gippsland_Lakes_Water_quality_data.xlsx'
 data = pd.read_excel(file_path)
 
 # Calculate the percentage of missing values for each column
